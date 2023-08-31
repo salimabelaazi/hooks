@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Rating, TextField } from '@mui/material';
-import { Link } from 'react-router-dom';
 
 const style = {
     position: 'absolute',
@@ -53,15 +52,8 @@ export default function AddMovie({ movies, setMovies }) {
 
     return (
         <div>
-            <Link to="/movie/new">
-            <Button  variant="contained" styele={{ color: 'red' }} >Add movie</Button>
-            </Link>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
+            
+            
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         Add a new movie
@@ -78,7 +70,7 @@ export default function AddMovie({ movies, setMovies }) {
                         variant="outlined"
                         fullWidth
                         onChange={(e) => setAddPosterUrl(e.target.value)} />
-                         <TextField label="Movie trailer"
+                    <TextField label="Movie trailer"
                         variant="outlined"
                         fullWidth
                         onChange={(e) => setAddTrailer(e.target.value)} />
@@ -93,7 +85,7 @@ export default function AddMovie({ movies, setMovies }) {
                     <br />
                     <Button variant="contained" onClick={AddMovieFunction} >Add movie</Button>
                 </Box>
-            </Modal>
+            
         </div>
     );
 }
